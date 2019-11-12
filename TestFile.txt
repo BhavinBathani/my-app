@@ -1,4 +1,4 @@
-this file is just a testing file
+this file is just a testing file, to create PR
 this is meant for rebase and conflict related testing
-one from develop, nothing should be merged in develop branch from this branch at all
+two from feature-branch, nothing should be merged in develop branch from this branch at all
 this line added to trigger update to feature branch
