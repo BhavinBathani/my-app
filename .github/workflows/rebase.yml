@@ -1,11 +1,11 @@
 on:
-  issue_comment:
-    types: [created]
+  issues:
+    types: [labeled]
 name: Automatic Rebase
 jobs:
   rebase:
     name: Rebase
-    if: contains(github.event.comment.body, '/rebase')
+    if: contains(github.event.issue.labels.name, 'AutoRebase')
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
