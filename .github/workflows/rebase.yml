@@ -9,6 +9,6 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Automatic Rebase
-      uses: cirrus-actions/rebase@master
+      uses: BhavinBathani/rebase-by-label@develop
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
