@@ -1,5 +1,5 @@
 on:
-  issues:
+  pull_request:
     types: [labeled]
 name: Automatic Rebase
 jobs:
