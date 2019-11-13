@@ -5,7 +5,7 @@ name: Automatic Rebase
 jobs:
   rebase:
     name: Rebase
-    if: contains(github.event.issue.labels.name, 'AutoRebase')
+    if: contains(github.event.issue.labels, 'AutoRebase')
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
