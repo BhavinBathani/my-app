@@ -1,14 +1,15 @@
 on:
   pull_request:
     types: [labeled]
-name: Automatic Rebase
+name: Rebase by label
 jobs:
   rebase:
     name: Rebase
+    if: contains(github.event.pull_request.labels, 'AutoRebase')
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: Automatic Rebase
+    - name: Rebase by label
       uses: BhavinBathani/rebase-by-label@develop
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
