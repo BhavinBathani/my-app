@@ -5,7 +5,7 @@ name: Rebase by label
 jobs:
   rebase:
     name: Rebase
-    if: contains(join(github.event.pull_request.labels.*.name), 'AutoRebase')
+    if: contains(github.event.pull_request.labels.*.name, 'AutoRebase')
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
