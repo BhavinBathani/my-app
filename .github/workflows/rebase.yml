@@ -1,15 +1,15 @@
 on:
-  issue_comment:
-    types: [created]
-name: Automatic Rebase
+  pull_request:
+    types: [labeled]
+name: Rebase by label
 jobs:
   rebase:
     name: Rebase
-    if: contains(github.event.comment.body, '/rebase')
+    if: contains(github.event.pull_request.labels.*.name, 'AutoRebase')
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: Automatic Rebase
-      uses: cirrus-actions/rebase@master
+    - name: Rebase by label
+      uses: BhavinBathani/rebase-by-label@develop
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
